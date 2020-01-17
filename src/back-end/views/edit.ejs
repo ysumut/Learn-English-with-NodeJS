@@ -1,0 +1,84 @@
+<form action='/edit' method='POST' class='col-xs-6 m-4' name="wordForm">
+  <div class="row">
+
+    <div class="col-5">
+      <p class="text-center" style="font-size:25px; font-family:Comic Sans MS; font-weight:bold; color:green">Translation</p>
+
+
+      <div class="form-group">
+        <label for="textarea">Enter words:</label>
+        <textarea class="form-control" name="area" id="textarea" rows="15"></textarea>
+      </div>
+      <br>
+
+      <button type="submit" class="btn btn-dark">Translate</button>
+      <br><br><br>
+
+      <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:0%"></div>
+      </div>
+    </div>
+
+
+    <div class="col-2"></div>
+
+
+    <div class="col-5">
+        
+        <div class="text-center mb-5" style="font-size:25px; font-family:Comic Sans MS; font-weight:bold; color:green;">Words</div>
+        
+        <div class="overflow-auto" style="height:500px;">
+
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border text-danger" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+
+        </div>
+            
+    </div>
+    
+  </div>
+</form>
+
+
+
+
+<script>
+
+$(document).ready(function () {
+
+        setInterval(() => {
+            $.getJSON('/edit/load.json', function(data){
+                $('.progress-bar').css("width", data.load + "%");
+                $('.progress-bar').html(data.load + "%");
+            })
+
+        }, 1000);
+
+    });
+
+
+$(document).ready(function () {
+        setInterval(() => {
+
+            $.getJSON('/edit/words.html', function(data){
+
+                if(typeof data[0] == 'string'){
+                    let words = "";
+
+                    data.forEach(function(item){
+                        words += item;
+                    })
+                
+                    $('.overflow-auto').html(words);
+                }
+            })
+
+        }, 1000);
+});
+
+
+</script>
+

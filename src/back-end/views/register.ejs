@@ -1,0 +1,46 @@
+
+<form action="/user/register" method="POST" class="col-xs-6 col-sm-6 mt-3">
+            <h2 style="color: blue">Sign Up</h2> <br>
+
+            <div class="form-group">
+              <label for="firstname">First name</label>
+              <input type="text" class="form-control" name="firstname" placeholder="Enter name" value = <%= first_value %> >
+              <p style="color: red"> <%= fn %> </p>
+            </div>
+
+            <div class="form-group">
+              <label for="lastname">Last name</label>
+              <input type="text" class="form-control" name="lastname" placeholder="Enter surname" value = <%= last_value %> >
+              <p style="color: red"> <%= ln %> </p>
+            </div>
+
+            <div class="form-group w-75">
+                <label for="signup_email">Email address</label>
+                <input type="email" class="form-control" name="myemail" aria-describedby="emailHelp" placeholder="example@gmail.com" value = <%= email_value %> >
+                <small class="form-text text-muted">(We'll never share your email with anyone else.)</small>
+                <p style="color: red"> <%= email %> </p>
+            </div>
+
+            <div class="form-group w-50">
+                <label for="signup_password">Password</label>
+                <input type="password" class="form-control" name="pw1" placeholder="Password">
+                <small class="form-text text-muted">(You must enter between 6 and 18 characters.)</small>
+                <p style="color: red"> <%= pw1 %> </p>
+            </div>
+
+            <div class="form-group w-50">
+                <label for="signup_password2">Repeat password</label>
+                <input type="password" class="form-control" name="pw2" placeholder="Please re-enter">
+                <p style="color: red"> <%= pw2 %> </p>
+            </div>
+
+            <div class="form-group">
+                <label for="FormControlFile">Upload profile photo</label>
+                <input type="file" class="form-control-file" name="file" id="FormControlFile">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+
+<% var fn = "", ln = "", email = "", pw1 = "", pw2 = "", first_value = "", last_value = "", email_value = ""; %>

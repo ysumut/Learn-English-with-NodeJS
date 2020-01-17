@@ -1,0 +1,22 @@
+<form action="/user/login" method="POST" class="col-xs-6 col-sm-5 mt-3">
+        <h2 style="color: blue">Sign İn</h2><br>
+
+        <div class="form-group">
+              <label for="signin_email">Email address</label>
+              <input type="email" class="form-control" id="signin_email" name="email" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+              <label for="signin_password">Password</label>
+              <input type="password" class="form-control" id="signin_password" name="pw" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+
+        <a href="/user/register">
+            <button type="button" class="btn btn-info">Register</button>
+        </a>
+
+      <p class="text-left" style="color:red; weight:bold"> <%= error %> </p>
+
+</form>
+
+<% var error=""; %>
