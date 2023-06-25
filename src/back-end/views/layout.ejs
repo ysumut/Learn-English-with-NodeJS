@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="/public/bootstrap-4.3.1/css/bootstrap.css">
+    
+    <title>Learn English</title>
+
+    <script type="application/javascript" src="/public/scripts/jquery-3.4.1.js"></script>
+    <script type="application/javascript" src="/public/bootstrap-4.3.1/js/bootstrap.js"></script>
+    
+</head>
+<body>
+
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+
+    <a class="navbar-brand" href="/">
+      <img src="/public/img/navbar.png" width="30" height="30" class="d-inline-block align-top" alt="img">
+      Learn English
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/edit">Edit words</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Study</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Listening</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Reading</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Other
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">About us</a>
+              <a class="dropdown-item" href="#">Contact</a>
+              <a class="dropdown-item" href="#">Supporters</a>
+            </div>
+          </li>
+        </ul>
+    </div>
+
+    <a class="navbar-brand" style="font-size: 17px" href="/user">
+      
+      <% if(typeof navbar_name == "undefined"){ %>
+        User
+        <img src="/public/img/user.png" width="30" height="30" class="d-inline-block align-top" alt="user">
+      <% }else{ %>
+        <%= navbar_name %>
+        <img src="/public/img/active_user.png" width="30" height="30" class="d-inline-block align-top" alt="user">
+      <% } %>
+
+    </a>
+
+  </nav>
+
+
+    <%- body %>
+
+
+
+
+</body>
+</html>

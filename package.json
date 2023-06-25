@@ -1,0 +1,27 @@
+{
+    "name": "learnenglish",
+    "version": "1.0.0",
+    "description": "English Project",
+    "main": "src/back-end/app.js",
+    "scripts": {
+        "start": "nodemon src/back-end/app.js",
+        "test": "node src/back-end/app.js"
+    },
+    "dependencies": {
+        "axios": "^0.21.1",
+        "body-parser": "^1.19.0",
+        "cheerio": "^1.0.0-rc.3",
+        "connect-mongodb-session": "^2.2.0",
+        "ejs": "^2.6.2",
+        "express": "^4.17.1",
+        "express-ejs-layouts": "^2.5.0",
+        "express-session": "^1.16.2",
+        "jsdom": "^15.1.1",
+        "mongodb": "^3.2.7",
+        "nodemailer": "^6.2.1",
+        "request": "^2.88.0",
+        "socket.io": "^2.2.0"
+    },
+    "author": "Yusuf Umut Bulak",
+    "license": "ISC"
+}
